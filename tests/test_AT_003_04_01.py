@@ -7,6 +7,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 link = 'https://www.saucedemo.com/'
 
+
 def test_login_to_item_card_irisamo():
     o = webdriver.ChromeOptions()
     o.headless = True
@@ -30,13 +31,13 @@ def test_login_to_item_card_irisamo():
 
     assert driver.current_url == 'https://www.saucedemo.com/cart.html'
 
-    itemNameBasketList = driver.find_element(By.XPATH, '//a[@id="item_0_title_link"]/div').text
+    item_name_basket_list = driver.find_element(By.XPATH, '//a[@id="item_0_title_link"]/div').text
     driver.find_element(By.XPATH, '//a[@id="item_0_title_link"]/div').click()
     time.sleep(2)
-    itemNameItemCard = driver.find_element(
+    item_name_basket_card = driver.find_element(
         By.XPATH, '//div[@id="inventory_item_container"]//div[@class="inventory_details_name large_size"]').text
 
-    assert itemNameBasketList == itemNameItemCard
+    assert item_name_basket_list == item_name_basket_card
 
     driver.find_element(By.XPATH, '//div[@id="shopping_cart_container"]/a').click()
     time.sleep(2)

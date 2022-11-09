@@ -1,27 +1,16 @@
-name: selenium_test
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-permissions:
-  checks: write
-  pull-requests: write
-  contents: read
-  
+name: GitHub Actions saucedemo
+on: [push, pull_request]
 jobs:
-  selenium_test:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - name: Check out this repo
         uses: actions/checkout@v3
-      - name: install Python
+      - name: Setup python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - name: Check code for errors by flake8 and format code with black
+      - name: Black and Flake8
         uses: ricardochaves/python-lint@v1.4.0
         with:
           python-root-list: ""
@@ -37,24 +26,13 @@ jobs:
           extra-black-options: ". -S"
           extra-mypy-options: ""
           extra-isort-options: ""
-      - name: install Chrome
-        uses: browser-actions/setup-chrome@latest
-      - name: check Chrome version
-        run: chrome --version
-      - name: install Poetry
-        run: pip install poetry
-      - name: install dependencies 
-        run: poetry update
-
-      - name: Run the pytest and generate junit xml report
-        run: poetry run pytest --junitxml report.xml
-      - name: Create test summary
-        uses: test-summary/action@v2.0
-        with:
-          paths: report.xml
-        if: always()
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          junit_files: "report.xml"
+      - name: Update repo
+        run: sudo apt-get update
+      - name: Install software
+        run: sudo apt-get install -y firefox
+      - name: Firefox version
+        run: firefox --version
+      - name: Install poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+      - name: Install dependencies
+        run: poetry install --no-root

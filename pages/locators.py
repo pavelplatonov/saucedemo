@@ -25,14 +25,14 @@ class CatalogPageLocators():
     CART_BTN = (By.XPATH, "//a[@class='shopping_cart_link']")
     SORT_WINDOW = (By.XPATH, "//select[@class='product_sort_container']")
 
-    ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link']")
+    ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")
     ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
     ITEM_DESC_BACKPACK = (By.XPATH, "//div[contains(text(),'carry.allTheThings() with the sleek, streamlined S')]']")
     PRICE_BACKPACK = (By.XPATH, "//div[normalize-space()='$29.99']")
     BTN_ADD_BACKPACK = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack")
     BTN_REMOVE_BACKPACK = (By.CSS_SELECTOR, "#remove-sauce-labs-backpack")
 
-    ITEM_NAME_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_title_link']")
+    ITEM_NAME_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_title_link")
     ITEM_IMG_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_img_link")
     ITEM_DESC_BOLT_T_SHIRT = (By.XPATH, "//div[contains(text(),'Get your testing superhero on with the Sauce Labs ')]")
     PRICE_BOLT_T_SHIRT = (By.XPATH, "//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/div[2]/"
@@ -69,4 +69,13 @@ class CatalogPageLocators():
     BTN_REMOVE_T_SHIRT = (By.ID, "remove-test.allthethings()-t-shirt-(red)")
 
     FOOTER_TEXT = (By.CSS_SELECTOR, ".footer_copy")
-    """Надо дописывать локаторы на большие катрочки товара и другие TC!!!"""
+
+    """Большие катрочки товара."""
+    BTN_BACK_TO_PRODUCTS = (By.CSS_SELECTOR, "#back-to-products")
+
+    BIG_ITEM_NAME_BACKPACK = (By.XPATH, "//div[@class='inventory_details_name large_size']")
+    BIG_ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
+    BIG_ITEM_DESC_BACKPACK = (By.XPATH, "//div[contains(text(),'carry.allTheThings() with the sleek, streamlined S')]']")
+    BIG_PRICE_BACKPACK = (By.XPATH, "//div[normalize-space()='$29.99']")
+    BIG_BTN_ADD_BACKPACK = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack")
+    BIG_BTN_REMOVE_BACKPACK = (By.CSS_SELECTOR, "#remove-sauce-labs-backpack")

@@ -119,7 +119,7 @@ def test_login_valid_user_invalid_password(browser):
     page.take_screenshot(test_name="test_invalid_password")
 
 
-"""TC_001.00.09 | Страница авторизации > Авторизация стандартного 
+"""TC_001.00.09 | Страница авторизации > Авторизация стандартного
     пользователя с валидными данными и вводом через Enter"""
 
 

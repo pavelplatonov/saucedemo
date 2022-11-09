@@ -46,3 +46,8 @@ class LoginPage(BasePage):
         elem = self.browser.find_element(*LoginPageLocators.ERROR_WARNING)
         text = elem.text
         return text
+
+    def getting_error_text_with_empty_username_password(self):
+        elem = self.browser.find_element(*LoginPageLocators.ERROR_WARNING_1)
+        text = elem.text
+        return text

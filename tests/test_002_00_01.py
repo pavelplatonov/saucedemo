@@ -1,6 +1,5 @@
-from idlelib import browser
-import pytest
 from selenium import webdriver
+from selenium.common import NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
@@ -35,12 +34,20 @@ def test_login_form():
 """TC_002.00.01 | Страница каталога > Просмотр каталога товаров"""
 
 
-def test_open_catalog_page(browser, page=None):
-    page.should_be_current_page(link_2)
+def element_is_present(browser=None):
 
-# driver = webdriver.Chrome(ChromeDriverManager().install())
-# driver.get(link)
-#
+    try:
+        browser.find_element(By.CSS_SELECTOR, "#item_4_title_link")
+        browser.find_element(By.CSS_SELECTOR, "#item_1_title_link")
+        browser.find_element(By.CSS_SELECTOR, "#item_2_title_link")
+        browser.find_element(By.CSS_SELECTOR, "#item_0_title_link")
+        browser.find_element(By.CSS_SELECTOR, "#item_5_title_link")
+        browser.find_element(By.CSS_SELECTOR, "#item_3_title_link")
+    except NoSuchElementException:
+        return False
+    return True
+
+
 # driver.find_element_by_tag_name('body').send_keys(Keys.END)
 # # Use send_keys(Keys.HOME) to scroll up to the top of page
 # """Обратите внимание, что send_keys(Keys.DOWN) / send_keys(Keys.UP) и

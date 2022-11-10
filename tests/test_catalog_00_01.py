@@ -1,3 +1,5 @@
+from idlelib import browser
+import pytest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
@@ -9,14 +11,12 @@ locked_out_user = "locked_out_user"
 problem_user = "problem_user"
 performance_glitch_user = "performance_glitch_user"
 valid_password = "secret_sauce"
+link_2 = "https://www.saucedemo.com/inventory.html"
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get(link)
 
-
-def test_title():
-    title_from_site = driver.title
-    assert title_from_site == 'Swag Labs'
+"""TC_002.00.01 | Выполнение предварительных условий"""
 
 
 def test_login_form():
@@ -31,6 +31,12 @@ def test_login_form():
 
     assert driver.current_url == 'https://www.saucedemo.com/inventory.html', 'We reached another site!!!'
 
+
+"""TC_002.00.01 | Страница каталога > Просмотр каталога товаров"""
+
+
+def test_open_catalog_page(browser, page=None):
+    page.should_be_current_page(link_2)
 
 # driver = webdriver.Chrome(ChromeDriverManager().install())
 # driver.get(link)

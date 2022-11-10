@@ -2,18 +2,20 @@ from selenium.webdriver import Keys
 from .base_page import BasePage
 from .locators import LoginPageLocators
 
+
 link = "https://www.saucedemo.com/"
 valid_user = "standard_user"
 locked_out_user = "locked_out_user"
 problem_user = "problem_user"
 performance_glitch_user = "performance_glitch_user"
-password = "secret_sauce"
+valid_password = "secret_sauce"
 
 
 class LoginPage(BasePage):
     def open_login_page(self):
         self.open_page()
         self.should_be_current_page(link)
+
 
     def login_standard_user(self):
         self.keyboard_input(*LoginPageLocators.LOGIN_USER, valid_user)

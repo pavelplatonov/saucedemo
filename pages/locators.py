@@ -12,6 +12,7 @@ class LoginPageLocators():
     LOGIN_LIST = (By.CSS_SELECTOR, ".login_credentials_wrap-inner")
     LOGIN_BTN = (By.CSS_SELECTOR, "#login-button")
     ERROR_WARNING = (By.XPATH, "//h3[@data-test='error']")
+    ERROR_WARNING_1 = (By.CSS_SELECTOR, "h3[data-test]")
 
 
 class CatalogPageLocators():

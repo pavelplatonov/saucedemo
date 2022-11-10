@@ -1,11 +1,11 @@
 from selenium.webdriver.common.by import By
 
 
-class BasePageLocators():
+class BasePageLocators:
     BASE_ICON = (By.CSS_SELECTOR, ".login_logo")
 
 
-class LoginPageLocators():
+class LoginPageLocators:
     LOGIN_FORM = (By.XPATH, "(//form)[1]")
     LOGIN_USER = (By.CSS_SELECTOR, "#user-name")
     LOGIN_PASSWORD = (By.CSS_SELECTOR, "#password")
@@ -15,7 +15,7 @@ class LoginPageLocators():
     ERROR_WARNING_1 = (By.CSS_SELECTOR, "h3[data-test]")
 
 
-class CatalogPageLocators():
+class CatalogPageLocators:
     MENU_BTN = (By.CSS_SELECTOR, "#react-burger-menu-btn")
     SIDEBAR_BTN_ALL = (By.CSS_SELECTOR, "#inventory_sidebar_link")
     SIDEBAR_BTN_ABOUT = (By.CSS_SELECTOR, "#about_sidebar_link")
@@ -28,37 +28,61 @@ class CatalogPageLocators():
 
     ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link']")
     ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
-    ITEM_DESC_BACKPACK = (By.XPATH, "//div[contains(text(),'carry.allTheThings() with the sleek, streamlined S')]']")
+    ITEM_DESC_BACKPACK = (
+        By.XPATH,
+        "//div[contains(text(),'carry.allTheThings() with the sleek, streamlined S')]']",
+    )
     PRICE_BACKPACK = (By.XPATH, "//div[normalize-space()='$29.99']")
     BTN_ADD_BACKPACK = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack")
     BTN_REMOVE_BACKPACK = (By.CSS_SELECTOR, "#remove-sauce-labs-backpack")
 
     ITEM_NAME_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_title_link']")
     ITEM_IMG_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_img_link")
-    ITEM_DESC_BOLT_T_SHIRT = (By.XPATH, "//div[contains(text(),'Get your testing superhero on with the Sauce Labs ')]")
-    PRICE_BOLT_T_SHIRT = (By.XPATH, "//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/div[2]/"
-                                    "div[1]']")
+    ITEM_DESC_BOLT_T_SHIRT = (
+        By.XPATH,
+        "//div[contains(text(),'Get your testing superhero on with the Sauce Labs ')]",
+    )
+    PRICE_BOLT_T_SHIRT = (
+        By.XPATH,
+        "//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/div[2]/"
+        "div[1]']",
+    )
     BTN_ADD_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt")
     BTN_REMOVE_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#remove-sauce-labs-bolt-t-shirt")
 
     ITEM_NAME_ONESIE = (By.CSS_SELECTOR, "#item_2_title_link")
     ITEM_IMG_ONESIE = (By.CSS_SELECTOR, "#item_2_img_link")
-    ITEM_DESC_ONESIE = (By.XPATH, "//div[contains(text(),'Rib snap infant onesie for the junior automation e')]")
-    PRICE_ONESIE = (By.XPATH, "//*[@id='inventory_container']/div/div[5]/div[2]/div[2]/div")
+    ITEM_DESC_ONESIE = (
+        By.XPATH,
+        "//div[contains(text(),'Rib snap infant onesie for the junior automation e')]",
+    )
+    PRICE_ONESIE = (
+        By.XPATH,
+        "//*[@id='inventory_container']/div/div[5]/div[2]/div[2]/div",
+    )
     BTN_ADD_ONESIE = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-onesie")
     BTN_REMOVE_ONESIE = (By.CSS_SELECTOR, "#remove-sauce-labs-onesie")
 
     ITEM_NAME_BIKE_LIGHT = (By.CSS_SELECTOR, "#item_0_title_link")
     ITEM_IMG_BIKE_LIGHT = (By.CSS_SELECTOR, "#item_0_img_link")
     ITEM_DESC_BIKE_LIGHT = (By.XPATH, "//div[contains(text(),'A red ')]")
-    PRICE_BIKE_LIGHT = (By.XPATH, "//*[@id='inventory_container']/div/div[2]/div[2]/div[2]/div")
+    PRICE_BIKE_LIGHT = (
+        By.XPATH,
+        "//*[@id='inventory_container']/div/div[2]/div[2]/div[2]/div",
+    )
     BTN_ADD_BIKE_LIGHT = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bike-light")
     BTN_REMOVE_BIKE_LIGHT = (By.CSS_SELECTOR, "#remove-sauce-labs-bike-light")
 
     ITEM_NAME_FLEECE_JACKET = (By.CSS_SELECTOR, "#item_5_title_link")
     ITEM_IMG_FLEECE_JACKET = (By.CSS_SELECTOR, "##item_5_img_link")
-    ITEM_DESC_FLEECE_JACKET = (By.XPATH, "//*[@id='inventory_container']/div/div[4]/div[2]/div[1]/div")
-    PRICE_FLEECE_JACKET = (By.XPATH, "//*[@id='inventory_container']/div/div[4]/div[2]/div[2]/div")
+    ITEM_DESC_FLEECE_JACKET = (
+        By.XPATH,
+        "//*[@id='inventory_container']/div/div[4]/div[2]/div[1]/div",
+    )
+    PRICE_FLEECE_JACKET = (
+        By.XPATH,
+        "//*[@id='inventory_container']/div/div[4]/div[2]/div[2]/div",
+    )
     BTN_ADD_FLEECE_JACKET = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-fleece-jacket")
     BTN_REMOVE_FLEECE_JACKET = (By.CSS_SELECTOR, "#remove-sauce-labs-fleece-jacket")
 

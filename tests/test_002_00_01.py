@@ -1,5 +1,7 @@
+import time
 from selenium import webdriver
 from selenium.common import NoSuchElementException
+from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 
@@ -36,15 +38,17 @@ def test_login_form():
 
 def test_find_product_cards():
     try:
-        driver.find_element_by_css_selektor("#item_%_title_link")
+        driver.find_elements_by_css_selector("_title_link")
     except NoSuchElementException:
         return False
     return True
 
-# driver.find_element_by_tag_name('body').send_keys(Keys.END)
-# Use send_keys(Keys.HOME) to scroll up to the top of page
-# """Обратите внимание, что send_keys(Keys.DOWN) / send_keys(Keys.UP) и
-# send_keys(Keys.PAGE_DOWN) / send_keys(Keys.PAGE_UP) также могут использоваться для прокрутки"""
 
-
-driver.quit()
+def test_scrolling_keyboard():
+    driver.find_element_css_selector("item_4_title_link").send_keys(Keys.END)
+    time.sleep(2)
+    driver.find_element_css_selector(".footer_copy").send_keys(Keys.HOME)
+    time.sleep(2)
+    driver.find_element_css_selector("item_4_title_link").send_keys(Keys.PAGE_DOWN)
+    time.sleep(2)
+    driver.find_element_css_selector(".footer_copy").send_keys(Keys.PAGE_UP)

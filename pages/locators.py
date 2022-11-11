@@ -12,6 +12,7 @@ class LoginPageLocators():
     LOGIN_LIST = (By.CSS_SELECTOR, ".login_credentials_wrap-inner")
     LOGIN_BTN = (By.CSS_SELECTOR, "#login-button")
     ERROR_WARNING = (By.XPATH, "//h3[@data-test='error']")
+    ERROR_WARNING_1 = (By.CSS_SELECTOR, "h3[data-test]")
 
 
 class CatalogPageLocators():
@@ -64,7 +65,8 @@ class CatalogPageLocators():
     ITEM_NAME_T_SHIRT = (By.CSS_SELECTOR, "#item_3_title_link")
     ITEM_IMG_T_SHIRT = (By.CSS_SELECTOR, "#item_3_img_link")
     ITEM_DESC_T_SHIRT = (By.XPATH, "//div[normalize-space()='This classic Sauce Labs t-shirt is perfect to wear "
-                                   "when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.']")
+                                   "when cozying up to your keyboard to automate a few tests. Super-soft and comfy "
+                                   "ringspun combed cotton.']")
     PRICE_T_SHIRT = (By.XPATH, "//div[@class='inventory_list']//div[1]//div[2]//div[2]//div[1]")
     BTN_ADD_T_SHIRT = (By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)")
     BTN_REMOVE_T_SHIRT = (By.ID, "remove-test.allthethings()-t-shirt-(red)")

@@ -1,54 +1,33 @@
 import time
-from selenium import webdriver
-from selenium.common import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
-from webdriver_manager.chrome import ChromeDriverManager
+from pages.login_page import LoginPage
 from selenium.webdriver.common.by import By
+from pages.locators import CatalogPageLocators
 
-
-link = "https://www.saucedemo.com/"
-valid_user = "standard_user"
-locked_out_user = "locked_out_user"
-problem_user = "problem_user"
-performance_glitch_user = "performance_glitch_user"
-valid_password = "secret_sauce"
 link_2 = "https://www.saucedemo.com/inventory.html"
-
-driver = webdriver.Chrome(ChromeDriverManager().install())
-driver.get(link)
-
-"""TC_002.00.01 | Выполнение предварительных условий"""
-
-
-def test_login_form():
-    user_name = driver.find_element(By.CSS_SELECTOR, "#user-name")
-    user_name.send_keys(valid_user)
-
-    password = driver.find_element(By.CSS_SELECTOR, "#password")
-    password.send_keys(valid_password)
-
-    button_login = driver.find_element(By.CSS_SELECTOR, "#login-button")
-    button_login.click()
-
-    assert driver.current_url == 'https://www.saucedemo.com/inventory.html', 'We reached another site!!!'
+link = "https://www.saucedemo.com/"
 
 
 """TC_002.00.01 | Страница каталога > Просмотр каталога товаров"""
 
+# login standard user
+def test_login_standard_user(browser):
+# проверка под стандартным юзером
+#open login page
+    page = LoginPage(browser, link)
+    page.full_login_standard_user()
+    page.should_be_current_page(link_2)
+# # count catalogue cards
+#     catalogue = browser.find_elements(*CatalogPageLocators.CATALOGUE_LIST)
+#     count = len(catalogue)
+#     assert count == 6, 'Общее количество товаро не соответсвует 6'
+# # scrolling keyboard
 
-def test_find_product_cards():
-    try:
-        driver.find_elements_by_css_selector("_title_link")
-    except NoSuchElementException:
-        return False
-    return True
-
-
-def test_scrolling_keyboard():
-    driver.find_element_css_selector("item_4_title_link").send_keys(Keys.END)
+    browser.find_element(*CatalogPageLocators.ITEM_NAME_BACKPACK).send_keys(Keys.END)
     time.sleep(2)
-    driver.find_element_css_selector(".footer_copy").send_keys(Keys.HOME)
-    time.sleep(2)
-    driver.find_element_css_selector("item_4_title_link").send_keys(Keys.PAGE_DOWN)
-    time.sleep(2)
-    driver.find_element_css_selector(".footer_copy").send_keys(Keys.PAGE_UP)
+# .ElementNotInteractableException: ошибка нв селектор в футере. линки на социалки тоже не подошли
+#     browser.find_element(By.XPATH, "//img[@class = 'footer_robot']").send_keys(Keys.HOME)
+#     time.sleep(2)
+#     browser.find_element(*CatalogPageLocators.ITEM_NAME_BACKPACK).send_keys(Keys.PAGE_DOWN)
+#     time.sleep(2)
+#     browser.find_element(By.XPATH, "//img[@class = 'footer_robot']").send_keys(Keys.PAGE_UP)

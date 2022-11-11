@@ -58,3 +58,21 @@ class LoginPage(BasePage):
         elem = self.browser.find_element(*LoginPageLocators.ERROR_WARNING_1)
         text = elem.text
         return text
+
+    def full_login_standard_user(self):
+        self.open_login_page()
+        self.login_standard_user()
+        self.enter_valid_password()
+        self.click_element(*LoginPageLocators.LOGIN_BTN)
+
+    def full_login_glitch_user(self):
+        self.open_login_page()
+        self.full_login_glitch_user()
+        self.enter_valid_password()
+        self.click_element(*LoginPageLocators.LOGIN_BTN)
+
+    def full_login_problem_user(self):
+        self.open_login_page()
+        self.login_problem_user()
+        self.login_problem_user()
+        self.click_element(*LoginPageLocators.LOGIN_BTN)

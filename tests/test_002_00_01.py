@@ -34,21 +34,17 @@ def test_login_form():
 """TC_002.00.01 | Страница каталога > Просмотр каталога товаров"""
 
 
-def element_is_present(browser=None):
-
+def test_find_product_cards():
     try:
-        browser.find_element(By.CSS_SELECTOR, "#item_4_title_link")
-        browser.find_element(By.CSS_SELECTOR, "#item_1_title_link")
-        browser.find_element(By.CSS_SELECTOR, "#item_2_title_link")
-        browser.find_element(By.CSS_SELECTOR, "#item_0_title_link")
-        browser.find_element(By.CSS_SELECTOR, "#item_5_title_link")
-        browser.find_element(By.CSS_SELECTOR, "#item_3_title_link")
+        driver.find_element_by_css_selektor("#item_%_title_link")
     except NoSuchElementException:
         return False
     return True
 
-
 # driver.find_element_by_tag_name('body').send_keys(Keys.END)
-# # Use send_keys(Keys.HOME) to scroll up to the top of page
+# Use send_keys(Keys.HOME) to scroll up to the top of page
 # """Обратите внимание, что send_keys(Keys.DOWN) / send_keys(Keys.UP) и
 # send_keys(Keys.PAGE_DOWN) / send_keys(Keys.PAGE_UP) также могут использоваться для прокрутки"""
+
+
+driver.quit()

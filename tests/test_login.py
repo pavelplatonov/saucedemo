@@ -146,3 +146,19 @@ def test_login_empty_user_empty_password_enter_btn(browser):
         == "Epic sadface: Username is required"
     ), "wrong warning text"
     page.take_screenshot(test_name="test_empty_username_and_password")
+
+
+"""TC_001.00.08 | Страница авторизации > Авторизация с пустым именем пользователя и паролем"""
+
+
+def test_login_empty_user_empty_password_enter_btn(browser):
+    page = LoginPage(browser, link)
+    page.open_login_page()
+    page.click_enter()
+    page.should_be_current_page("https://www.saucedemo.com/")
+    error_text = page.getting_error_text_with_empty_username_password()
+    assert (
+        error_text
+        == "Epic sadface: Username is required"
+    ), "wrong warning text"
+    page.take_screenshot(test_name="test_empty_username_and_password")

@@ -16,7 +16,6 @@ class LoginPage(BasePage):
         self.open_page()
         self.should_be_current_page(link)
 
-
     def login_standard_user(self):
         self.keyboard_input(*LoginPageLocators.LOGIN_USER, valid_user)
 

@@ -29,7 +29,7 @@ class CatalogPageLocators():
     ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")
     ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
     ITEM_DESC_BACKPACK = (By.XPATH, "//div[contains(text(),'carry.allTheThings() with the sleek, streamlined S')]']")
-    PRICE_BACKPACK = (By.XPATH, "//div[normalize-space()='$29.99']")
+    PRICE_BACKPACK = (By.XPATH, "//div[@class='inventory_list']//div[1]//div[2]//div[2]//div[1]")
     BTN_ADD_BACKPACK = (By.ID, "add-to-cart-sauce-labs-backpack")
     BTN_REMOVE_BACKPACK = (By.ID, "remove-sauce-labs-backpack")
 

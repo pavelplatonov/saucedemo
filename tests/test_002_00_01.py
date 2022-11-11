@@ -38,10 +38,11 @@ def test_login_form():
 
 def test_find_product_cards():
     try:
-        driver.find_elements_by_css_selector("_title_link")
+        driver.find_elements_by_class_name("inventory_item_price")
     except NoSuchElementException:
         return False
     return True
+    # len(driver.find_elements_class_name("inventory_item_price"))
 
 
 def test_scrolling_keyboard():

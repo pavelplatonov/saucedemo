@@ -146,5 +146,5 @@ def test_login_empty_user_empty_password_enter_btn(browser):
         == "Epic sadface: Username is required"
     ), "wrong warning text"
     page.username_error_svg_is_present()
-    page.username_error_svg_is_present()
+    page.password_error_svg_is_present()
     page.take_screenshot(test_name="test_empty_username_and_password")

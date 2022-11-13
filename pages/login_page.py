@@ -1,6 +1,7 @@
 from selenium.webdriver import Keys
 from .base_page import BasePage
 from .locators import LoginPageLocators
+from selenium.webdriver.common.by import By
 
 
 link = "https://www.saucedemo.com/"
@@ -53,3 +54,9 @@ class LoginPage(BasePage):
         elem = self.browser.find_element(*LoginPageLocators.ERROR_WARNING_1)
         text = elem.text
         return text
+
+    def username_error_svg_is_present(self):
+        self.element_is_present(*LoginPageLocators.ERROR_ITEM_ON_NAME_FIELD)
+
+    def password_error_svg_is_present(self):
+        self.element_is_present(*LoginPageLocators.ERROR_ITEM_ON_PASSWORD_FIELD)

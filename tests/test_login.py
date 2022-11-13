@@ -141,8 +141,5 @@ def test_login_empty_user_empty_password_enter_btn(browser):
     page.click_enter()
     page.should_be_current_page("https://www.saucedemo.com/")
     error_text = page.getting_error_text_with_empty_username_password()
-    assert (
-        error_text
-        == "Epic sadface: Username is required"
-    ), "wrong warning text"
+    assert error_text == "Epic sadface: Username is required", "wrong warning text"
     page.take_screenshot(test_name="test_empty_username_and_password")

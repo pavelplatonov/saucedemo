@@ -9,11 +9,8 @@ class LoginPageLocators():
     LOGIN_FORM = (By.XPATH, "(//form)[1]")
     LOGIN_USER = (By.CSS_SELECTOR, "#user-name")
     LOGIN_PASSWORD = (By.CSS_SELECTOR, "#password")
-     LOGIN_USER = (By.XPATH, "//input[@id = 'user-name']")
-     LOGIN_PASSWORD = (By.XPATH, "//input[@id = 'password']")
     LOGIN_LIST = (By.CSS_SELECTOR, ".login_credentials_wrap-inner")
     LOGIN_BTN = (By.CSS_SELECTOR, "#login-button")
-     LOGIN_BTN = (By.XPATH, "//input[@id = 'login-button']")
     ERROR_WARNING = (By.XPATH, "//h3[@data-test='error']")
     ERROR_WARNING_1 = (By.CSS_SELECTOR, "h3[data-test]")
 
@@ -28,12 +25,12 @@ class CatalogPageLocators():
 
     CART_BTN = (By.XPATH, "//a[@class='shopping_cart_link']")
     SORT_WINDOW = (By.XPATH, "//select[@class='product_sort_container']")
+    CATALOGUE_LIST = (By.XPATH, "(//div[@class='inventory_item'])")
 
-    CATALOGUE_LIST = (By.CLASS_NAME, ".inventory_item")
     ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")
     ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
-    ITEM_DESC_BACKPACK = (By.XPATH, "//div[contains(text(),'carry.allTheThings() with the sleek, streamlined S')]']")
-    PRICE_BACKPACK = (By.XPATH, "//div[@class='inventory_list']//div[1]//div[2]//div[2]//div[1]")
+    ITEM_DESC_BACKPACK = (By.XPATH, "(//div[@class = 'inventory_item_desc'])[1]")
+    PRICE_BACKPACK = (By.XPATH, "(//div[@class = 'inventory_item_price'])[1]")
     BTN_ADD_BACKPACK = (By.ID, "add-to-cart-sauce-labs-backpack")
     BTN_REMOVE_BACKPACK = (By.ID, "remove-sauce-labs-backpack")
 

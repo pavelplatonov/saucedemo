@@ -33,7 +33,7 @@ class LoginPage(BasePage):
         self.keyboard_input(*LoginPageLocators.LOGIN_USER, "admin")
 
     def enter_valid_password(self):
-        self.keyboard_input(*LoginPageLocators.LOGIN_PASSWORD, password)
+        self.keyboard_input(*LoginPageLocators.LOGIN_PASSWORD, valid_password)
 
     def enter_invalid_password(self):
         self.keyboard_input(*LoginPageLocators.LOGIN_PASSWORD, "%password")

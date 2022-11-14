@@ -1,6 +1,7 @@
 from selenium.webdriver import Keys
 from .base_page import BasePage
 from .locators import *
+from selenium.webdriver.support.color import Color
 
 
 link = "https://www.saucedemo.com/"
@@ -65,3 +66,10 @@ class LoginPage(BasePage):
 
     def check_element_is_enable(self):
         return self.browser.find_element(*CartPageLocators.BTN_CHECKOUT).is_enabled()
+
+    def find_checkout_button_color(self):
+        rgb = self.browser.find_element(
+            *CartPageLocators.BTN_CHECKOUT).value_of_css_property(
+            'background-color')
+        color = Color.from_string(rgb).hex
+        return color

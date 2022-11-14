@@ -56,3 +56,12 @@ class LoginPage(BasePage):
 
     def go_to_bike_light_from_basket(self):
         self.click_element(*CatalogPageLocators.IN_BASKET)
+
+    def add_fleece_jacket_to_cart(self):
+        self.click_element(*CatalogPageLocators.BTN_ADD_FLEECE_JACKET)
+
+    def click_on_checkout_button(self):
+        self.click_element(*CartPageLocators.BTN_CHECKOUT)
+
+    def check_element_is_enable(self):
+        return self.browser.find_element(*CartPageLocators.BTN_CHECKOUT).is_enabled()

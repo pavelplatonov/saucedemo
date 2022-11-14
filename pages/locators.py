@@ -96,3 +96,7 @@ class CatalogPageLocators:
     """Надо дописывать локаторы на большие катрочки товара и другие TC!!!"""
 
     IN_BASKET = (By.XPATH, '//*[@class="inventory_item_name"]')
+
+
+class CartPageLocators:
+    BTN_CHECKOUT = (By.CSS_SELECTOR, "#checkout")

@@ -9,7 +9,6 @@ driver.get("https://www.saucedemo.com/")
 
 def test_title():
     title_from_site = driver.title
-
     assert title_from_site == "Swag Labs"
 
 def test_login_form():
@@ -21,16 +20,13 @@ def test_login_form():
     assert driver.current_url == "https://www.saucedemo.com/inventory.html", "We are on another page!!!"
     time.sleep(2)
 
-# def click_on_icon():
-#     driver.find_element(By.XPATH, "//a[@id='item_4_title_link']").click()
-#     time.sleep(2)
+def click_on_icon():
+    driver.find_element(By.XPATH, "//a[@id='item_4_title_link']").click()
+    time.sleep(2)
 
     # icon_button = driver.find_element((By.XPATH, "//button[@id='add-to-cart-sauce-labs-backpack']"))
     # icon_button.click()
 
     driver.quit()
-
-    # class ProductsOnPage:
-    #     SauceLabsBackpack = (By.CSS_SELECTOR, "a#item_4_title_link")
 
 

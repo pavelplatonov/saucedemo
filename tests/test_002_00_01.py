@@ -1,11 +1,6 @@
 import time
-from selenium.webdriver.common.keys import Keys
-from webdriver_manager.core import driver
 from pages.login_page import LoginPage
 from pages.locators import CatalogPageLocators
-from selenium.webdriver import ActionChains
-
-action = ActionChains(driver)
 
 link = "https://www.saucedemo.com/"
 link_2 = "https://www.saucedemo.com/inventory.html"
@@ -34,6 +29,5 @@ def test_menu_sidebar(browser):
     time.sleep(2)
     browser.find_element(*CatalogPageLocators.SIDEBAR_BTN_LOGOUT).click()
     time.sleep(2)
-
-
-assert driver.current_url == 'https://www.saucedemo.com/'
+    # проверяет переход на страницу авторизации
+    var = browser.current_url == "https://www.saucedemo.com/"

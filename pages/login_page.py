@@ -26,7 +26,9 @@ class LoginPage(BasePage):
         self.keyboard_input(*LoginPageLocators.LOGIN_USER, locked_out_user)
 
     def login_performance_glitch_user(self):
-        self.keyboard_input(*LoginPageLocators.LOGIN_USER, performance_glitch_user)
+        self.keyboard_input(
+            *LoginPageLocators.LOGIN_USER, performance_glitch_user
+        )
 
     def login_invalid_user(self):
         self.keyboard_input(*LoginPageLocators.LOGIN_USER, "admin")
@@ -45,11 +47,6 @@ class LoginPage(BasePage):
 
     def getting_error_text(self):
         elem = self.browser.find_element(*LoginPageLocators.ERROR_WARNING)
-        text = elem.text
-        return text
-
-    def getting_error_text_with_empty_username_password(self):
-        elem = self.browser.find_element(*LoginPageLocators.ERROR_WARNING_1)
         text = elem.text
         return text
 

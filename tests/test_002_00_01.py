@@ -21,7 +21,7 @@ def test_login_standard_user(browser):
 def test_count_catalog_cards(browser):
     catalogue = browser.find_elements(*CatalogPageLocators.CATALOGUE_LIST)
     count = len(catalogue)
-    assert count == 6, 'Общее количество товаро не соответсвует 6'
+    assert count == 6, "Общее количество товаро не соответсвует 6"
 
 
 def test_menu_sidebar(browser):
@@ -30,4 +30,4 @@ def test_menu_sidebar(browser):
     browser.find_element(*CatalogPageLocators.SIDEBAR_BTN_LOGOUT).click()
     time.sleep(2)
     # проверяет переход на страницу авторизации
-    var = browser.current_url == "https://www.saucedemo.com/"
+    assert browser.current_url == "https://www.saucedemo.com/"

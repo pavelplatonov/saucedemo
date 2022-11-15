@@ -11,7 +11,8 @@ performance_glitch_user = "performance_glitch_user"
 valid_password = "secret_sauce"
 
 
-"""TC_001.00.01 | Страница авторизации > Авторизация стандартного пользователя с валидными данными"""
+"""TC_001.00.01 | Страница авторизации > Авторизация стандартного пользователя 
+с валидными данными"""
 
 
 @pytest.mark.smoke
@@ -24,7 +25,8 @@ def test_login_valid_user(browser):
     page.should_be_current_page("https://www.saucedemo.com/inventory.html")
 
 
-"""TC_001.00.02 | Страница авторизации > Авторизация заблокированного пользователя с валидными данными"""
+"""TC_001.00.02 | Страница авторизации > Авторизация заблокированного пользователя 
+с валидными данными"""
 
 
 def test_locked_out_user(browser):
@@ -41,7 +43,8 @@ def test_locked_out_user(browser):
     page.take_screenshot(test_name="test_locked_out_user")
 
 
-"""TC_001.00.03 | Страница авторизации > Авторизация проблемного пользователя с валидными данными"""
+"""TC_001.00.03 | Страница авторизации > Авторизация проблемного пользователя 
+с валидными данными"""
 
 
 def test_problem_user(browser):
@@ -56,7 +59,8 @@ def test_problem_user(browser):
     assert loading_time <= 30, "loading time exceed 30 seconds"
 
 
-"""TC_001.00.04 | Страница авторизации > Авторизация performance glitch user с валидными данными"""
+"""TC_001.00.04 | Страница авторизации > Авторизация performance glitch user 
+с валидными данными"""
 
 
 @pytest.mark.xfail
@@ -72,7 +76,8 @@ def test_performance_glitch_user(browser):
     assert loading_time <= 15, "loading time exceed 15 seconds"
 
 
-"""TC_001.00.05 | Страница авторизации > Авторизация стандартного пользователя с валидным логином и пустым паролем"""
+"""TC_001.00.05 | Страница авторизации > Авторизация стандартного пользователя 
+с валидным логином и пустым паролем"""
 
 
 def test_login_valid_user_empty_password(browser):
@@ -81,11 +86,14 @@ def test_login_valid_user_empty_password(browser):
     page.login_standard_user()
     page.click_login_btn()
     error_text = page.getting_error_text()
-    assert error_text == "Epic sadface: Password is required", "wrong warning text"
+    assert (
+        error_text == "Epic sadface: Password is required"
+    ), "wrong warning text"
     page.take_screenshot(test_name="test_empty_password")
 
 
-"""TC_001.00.06 | Страница авторизации > Авторизация с невалидным пользователем и валидным паролем"""
+"""TC_001.00.06 | Страница авторизации > Авторизация с невалидным пользователем и 
+валидным паролем"""
 
 
 def test_login_invalid_user_valid_password(browser):
@@ -132,7 +140,8 @@ def test_login_valid_user_valid_password_enter_btn(browser):
     page.should_be_current_page("https://www.saucedemo.com/inventory.html")
 
 
-"""TC_001.00.08 | Страница авторизации > Авторизация с пустым именем пользователя и паролем"""
+"""TC_001.00.08 | Страница авторизации > Авторизация с пустым именем пользователя 
+и паролем"""
 
 
 def test_login_empty_user_empty_password_enter_btn(browser):
@@ -142,7 +151,6 @@ def test_login_empty_user_empty_password_enter_btn(browser):
     page.should_be_current_page("https://www.saucedemo.com/")
     error_text = page.getting_error_text_with_empty_username_password()
     assert (
-        error_text
-        == "Epic sadface: Username is required"
+        error_text == "Epic sadface: Username is required"
     ), "wrong warning text"
     page.take_screenshot(test_name="test_empty_username_and_password")

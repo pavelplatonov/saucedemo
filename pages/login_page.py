@@ -69,7 +69,7 @@ class LoginPage(BasePage):
 
     def find_checkout_button_color(self):
         rgb = self.browser.find_element(
-            *CartPageLocators.BTN_CHECKOUT).value_of_css_property(
-            'background-color')
+            *CartPageLocators.BTN_CHECKOUT
+        ).value_of_css_property("background-color")
         color = Color.from_string(rgb).hex
         return color

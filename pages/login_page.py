@@ -26,7 +26,9 @@ class LoginPage(BasePage):
         self.keyboard_input(*LoginPageLocators.LOGIN_USER, locked_out_user)
 
     def login_performance_glitch_user(self):
-        self.keyboard_input(*LoginPageLocators.LOGIN_USER, performance_glitch_user)
+        self.keyboard_input(
+            *LoginPageLocators.LOGIN_USER, performance_glitch_user
+        )
 
     def login_invalid_user(self):
         self.keyboard_input(*LoginPageLocators.LOGIN_USER, "admin")

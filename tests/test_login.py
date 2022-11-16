@@ -18,7 +18,7 @@ valid_password = "secret_sauce"
 def test_login_valid_user(browser):
     page = LoginPage(browser, link)
     page.open_login_page()
-    page.login_valid_user()
+    page.login_standard_user()
     page.enter_valid_password()
     page.click_login_btn()
     page.should_be_current_page("https://www.saucedemo.com/inventory.html")
@@ -78,7 +78,7 @@ def test_performance_glitch_user(browser):
 def test_login_valid_user_empty_password(browser):
     page = LoginPage(browser, link)
     page.open_login_page()
-    page.login_valid_user()
+    page.login_standard_user()
     page.click_login_btn()
     error_text = page.getting_error_text()
     assert error_text == "Epic sadface: Password is required", "wrong warning text"
@@ -108,7 +108,7 @@ def test_login_invalid_user_valid_password(browser):
 def test_login_valid_user_invalid_password(browser):
     page = LoginPage(browser, link)
     page.open_login_page()
-    page.login_valid_user()
+    page.login_standard_user()
     page.enter_invalid_password()
     page.click_login_btn()
     error_text = page.getting_error_text()
@@ -126,7 +126,7 @@ def test_login_valid_user_invalid_password(browser):
 def test_login_valid_user_valid_password_enter_btn(browser):
     page = LoginPage(browser, link)
     page.open_login_page()
-    page.login_valid_user()
+    page.login_standard_user()
     page.enter_valid_password()
     page.click_enter()
     page.should_be_current_page("https://www.saucedemo.com/inventory.html")
@@ -141,8 +141,5 @@ def test_login_empty_user_empty_password_enter_btn(browser):
     page.click_enter()
     page.should_be_current_page("https://www.saucedemo.com/")
     error_text = page.getting_error_text_with_empty_username_password()
-    assert (
-        error_text
-        == "Epic sadface: Username is required"
-    ), "wrong warning text"
+    assert error_text == "Epic sadface: Username is required", "wrong warning text"
     page.take_screenshot(test_name="test_empty_username_and_password")

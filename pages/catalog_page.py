@@ -1,5 +1,4 @@
-from .base_page import BasePage
-from .locators import CatalogPageLocators
+# from .base_page import BasePage
+# from .locators import CatalogPageLocators
 
-class CatalogPage:
-    
+# class CatalogPage:

@@ -1,1 +1,1 @@
-from pages.catalog_page import CatalogPage
+# from pages.catalog_page import CatalogPage

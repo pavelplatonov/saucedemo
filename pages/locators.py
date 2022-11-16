@@ -25,43 +25,44 @@ class CatalogPageLocators:
 
     CART_BTN = (By.XPATH, "//a[@class='shopping_cart_link']")
     SORT_WINDOW = (By.XPATH, "//select[@class='product_sort_container']")
+    CATALOGUE_LIST = (By.XPATH, "(//div[@class='inventory_item'])")
 
-    ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link']")
+    ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")
     ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
     ITEM_DESC_BACKPACK = (
         By.XPATH,
-        "//div[contains(text(),'carry.allTheThings() with the sleek, streamlined S')]']",
+        "(//div[@class = 'inventory_item_desc'])[1]",
     )
-    PRICE_BACKPACK = (By.XPATH, "//div[normalize-space()='$29.99']")
-    BTN_ADD_BACKPACK = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack")
-    BTN_REMOVE_BACKPACK = (By.CSS_SELECTOR, "#remove-sauce-labs-backpack")
+    PRICE_BACKPACK = (By.XPATH, "(//div[@class = 'inventory_item_price'])[1]")
+    BTN_ADD_BACKPACK = (By.ID, "add-to-cart-sauce-labs-backpack")
+    BTN_REMOVE_BACKPACK = (By.ID, "remove-sauce-labs-backpack")
 
-    ITEM_NAME_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_title_link']")
+    ITEM_NAME_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_title_link")
     ITEM_IMG_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_img_link")
     ITEM_DESC_BOLT_T_SHIRT = (
         By.XPATH,
-        "//div[contains(text(),'Get your testing superhero on with the Sauce Labs ')]",
+        "//div[contains(text(),'Get your testing superhero on with the Sauce Labs ')]"
     )
     PRICE_BOLT_T_SHIRT = (
         By.XPATH,
-        "//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/div[2]/"
-        "div[1]']",
+        "//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/"
+        "div[2]/div[1]']"
     )
-    BTN_ADD_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bolt-t-shirt")
-    BTN_REMOVE_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#remove-sauce-labs-bolt-t-shirt")
+    BTN_ADD_BOLT_T_SHIRT = (By.ID, "add-to-cart-sauce-labs-bolt-t-shirt")
+    BTN_REMOVE_BOLT_T_SHIRT = (By.ID, "remove-sauce-labs-bolt-t-shirt")
 
     ITEM_NAME_ONESIE = (By.CSS_SELECTOR, "#item_2_title_link")
     ITEM_IMG_ONESIE = (By.CSS_SELECTOR, "#item_2_img_link")
     ITEM_DESC_ONESIE = (
         By.XPATH,
-        "//div[contains(text(),'Rib snap infant onesie for the junior automation e')]",
+        "//div[contains(text(),'Rib snap infant onesie for the junior automation e')]"
     )
     PRICE_ONESIE = (
         By.XPATH,
         "//*[@id='inventory_container']/div/div[5]/div[2]/div[2]/div",
     )
-    BTN_ADD_ONESIE = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-onesie")
-    BTN_REMOVE_ONESIE = (By.CSS_SELECTOR, "#remove-sauce-labs-onesie")
+    BTN_ADD_ONESIE = (By.ID, "add-to-cart-sauce-labs-onesie")
+    BTN_REMOVE_ONESIE = (By.ID, "remove-sauce-labs-onesie")
 
     ITEM_NAME_BIKE_LIGHT = (By.CSS_SELECTOR, "#item_0_title_link")
     ITEM_IMG_BIKE_LIGHT = (By.CSS_SELECTOR, "#item_0_img_link")
@@ -70,8 +71,8 @@ class CatalogPageLocators:
         By.XPATH,
         "//*[@id='inventory_container']/div/div[2]/div[2]/div[2]/div",
     )
-    BTN_ADD_BIKE_LIGHT = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-bike-light")
-    BTN_REMOVE_BIKE_LIGHT = (By.CSS_SELECTOR, "#remove-sauce-labs-bike-light")
+    BTN_ADD_BIKE_LIGHT = (By.ID, "add-to-cart-sauce-labs-bike-light")
+    BTN_REMOVE_BIKE_LIGHT = (By.ID, "remove-sauce-labs-bike-light")
 
     ITEM_NAME_FLEECE_JACKET = (By.CSS_SELECTOR, "#item_5_title_link")
     ITEM_IMG_FLEECE_JACKET = (By.CSS_SELECTOR, "##item_5_img_link")
@@ -83,15 +84,41 @@ class CatalogPageLocators:
         By.XPATH,
         "//*[@id='inventory_container']/div/div[4]/div[2]/div[2]/div",
     )
-    BTN_ADD_FLEECE_JACKET = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-fleece-jacket")
-    BTN_REMOVE_FLEECE_JACKET = (By.CSS_SELECTOR, "#remove-sauce-labs-fleece-jacket")
+    BTN_ADD_FLEECE_JACKET = (By.ID, "add-to-cart-sauce-labs-fleece-jacket")
+    BTN_REMOVE_FLEECE_JACKET = (By.ID, "remove-sauce-labs-fleece-jacket")
 
     ITEM_NAME_T_SHIRT = (By.CSS_SELECTOR, "#item_3_title_link")
     ITEM_IMG_T_SHIRT = (By.CSS_SELECTOR, "#item_3_img_link")
-    ITEM_DESC_T_SHIRT = (By.XPATH, "")
-    PRICE_T_SHIRT = (By.XPATH, "")
+    ITEM_DESC_T_SHIRT = (
+        By.XPATH,
+        "//div[normalize-space()='This classic Sauce Labs t-shirt is perfect to wear "
+        "when cozying up to your keyboard to automate a few tests. Super-soft and "
+        "comfy ringspun combed cotton.']"
+    )
+    PRICE_T_SHIRT = (
+        By.XPATH,
+        "//div[@class='inventory_list']//div[1]//div[2]//div[2]//div[1]",
+    )
     BTN_ADD_T_SHIRT = (By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)")
     BTN_REMOVE_T_SHIRT = (By.ID, "remove-test.allthethings()-t-shirt-(red)")
 
     FOOTER_TEXT = (By.CSS_SELECTOR, ".footer_copy")
-    """Надо дописывать локаторы на большие катрочки товара и другие TC!!!"""
+
+    """Большие катрочки товара."""
+    BTN_BACK_TO_PRODUCTS = (By.CSS_SELECTOR, "#back-to-products")
+
+    BIG_ITEM_NAME_BACKPACK = (
+        By.XPATH,
+        "//div[@class='inventory_details_name large_size']"
+    )
+    BIG_ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
+    BIG_ITEM_DESC_BACKPACK = (
+        By.XPATH,
+        "//div[contains(text(),'carry.allTheThings() with the sleek, streamlined S')]']"
+    )
+    BIG_PRICE_BACKPACK = (By.XPATH, "//div[normalize-space()='$29.99']")
+    BIG_BTN_ADD_BACKPACK = (
+        By.CSS_SELECTOR,
+        "#add-to-cart-sauce-labs-backpack"
+    )
+    BIG_BTN_REMOVE_BACKPACK = (By.CSS_SELECTOR, "#remove-sauce-labs-backpack")

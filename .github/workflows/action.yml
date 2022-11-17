@@ -38,21 +38,10 @@ jobs:
         run: chrome --version
       - name: install Poetry
         run: pip install poetry
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v3
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
-      - name: Install dependencies
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
-      - name: Run pytest
-        run: poetry run pytest
       - name: install dependencies
         run: poetry update
       - name: Run the pytest and generate junit xml report
-        run: poetry run pytest --junitxml report.xml
+        run: CHROMIUM_BIN=$(which chrome) poetry run pytest --junitxml report.xml
       - name: Create test summary
         uses: test-summary/action@v2.0
         with:

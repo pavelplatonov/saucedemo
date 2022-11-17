@@ -26,8 +26,6 @@ def test_count_catalog_cards(browser):
 
 def test_menu_sidebar(browser):
     browser.find_element(*CatalogPageLocators.MENU_BTN).click()
-    time.sleep(2)
     browser.find_element(*CatalogPageLocators.SIDEBAR_BTN_LOGOUT).click()
-    time.sleep(2)
     # проверяет переход на страницу авторизации
     assert browser.current_url == "https://www.saucedemo.com/"

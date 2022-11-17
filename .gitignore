@@ -1,5 +1,11 @@
-# Byte-compiled / optimized / DLL files
+requirements.txt
+.idea/
+.pytest_cashe/
 __pycache__/
+workflows/
+__init__.py
+
+# Byte-compiled / optimized / DLL files
 *.py[cod]
 *$py.class
 

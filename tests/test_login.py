@@ -11,7 +11,7 @@ performance_glitch_user = "performance_glitch_user"
 valid_password = "secret_sauce"
 
 
-"""TC_001.00.01 | Страница авторизации > Авторизация стандартного пользователя 
+"""TC_001.00.01 | Страница авторизации > Авторизация стандартного пользователя
 с валидными данными"""
 
 
@@ -25,7 +25,7 @@ def test_login_valid_user(browser):
     page.should_be_current_page("https://www.saucedemo.com/inventory.html")
 
 
-"""TC_001.00.02 | Страница авторизации > Авторизация заблокированного пользователя 
+"""TC_001.00.02 | Страница авторизации > Авторизация заблокированного пользователя
 с валидными данными"""
 
 
@@ -43,7 +43,7 @@ def test_locked_out_user(browser):
     page.take_screenshot(test_name="test_locked_out_user")
 
 
-"""TC_001.00.03 | Страница авторизации > Авторизация проблемного пользователя 
+"""TC_001.00.03 | Страница авторизации > Авторизация проблемного пользователя
 с валидными данными"""
 
 
@@ -59,7 +59,7 @@ def test_problem_user(browser):
     assert loading_time <= 30, "loading time exceed 30 seconds"
 
 
-"""TC_001.00.04 | Страница авторизации > Авторизация performance glitch user 
+"""TC_001.00.04 | Страница авторизации > Авторизация performance glitch user
 с валидными данными"""
 
 
@@ -76,7 +76,7 @@ def test_performance_glitch_user(browser):
     assert loading_time <= 15, "loading time exceed 15 seconds"
 
 
-"""TC_001.00.05 | Страница авторизации > Авторизация стандартного пользователя 
+"""TC_001.00.05 | Страница авторизации > Авторизация стандартного пользователя
 с валидным логином и пустым паролем"""
 
 
@@ -92,7 +92,7 @@ def test_login_valid_user_empty_password(browser):
     page.take_screenshot(test_name="test_empty_password")
 
 
-"""TC_001.00.06 | Страница авторизации > Авторизация с невалидным пользователем и 
+"""TC_001.00.06 | Страница авторизации > Авторизация с невалидным пользователем и
 валидным паролем"""
 
 
@@ -140,7 +140,7 @@ def test_login_valid_user_valid_password_enter_btn(browser):
     page.should_be_current_page("https://www.saucedemo.com/inventory.html")
 
 
-"""TC_001.00.08 | Страница авторизации > Авторизация с пустым именем пользователя 
+"""TC_001.00.08 | Страница авторизации > Авторизация с пустым именем пользователя
 и паролем"""
 
 
@@ -150,7 +150,12 @@ def test_login_empty_user_empty_password_enter_btn(browser):
     page.click_enter()
     page.should_be_current_page("https://www.saucedemo.com/")
     error_text = page.getting_error_text_with_empty_username_password()
+
     assert (
         error_text == "Epic sadface: Username is required"
     ), "wrong warning text"
+    page.username_error_svg_is_present()
+    page.password_error_svg_is_present()
+    color = page.find_error_element_bottom_line_color()
+    assert color == "#e2231a", "Bottom line wrong color"
     page.take_screenshot(test_name="test_empty_username_and_password")

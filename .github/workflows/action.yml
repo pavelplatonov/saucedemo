@@ -28,7 +28,11 @@ jobs:
           extra-isort-options: ""
       - name: Update repo
         run: sudo apt-get update
-      - name: Install software
+      - name: Install Google-Chrome
+        run: sudo apt-get install -y google-chrome
+      - name: Google-Chrome version
+        run: google-chrome --version    
+      - name: Install Firefox
         run: sudo apt-get install -y firefox
       - name: Firefox version
         run: firefox --version

@@ -32,8 +32,6 @@ jobs:
 #           extra-isort-options: ""
       - name: install Chrome
         uses: browser-actions/setup-chrome@latest
-        with:
-          chrome-version: stable
       - name: check Chrome version
         run: chrome --version
       - name: install Poetry
@@ -41,14 +39,9 @@ jobs:
       - name: install dependencies
         run: poetry update
       - name: Run the pytest and generate junit xml report
-        run: CHROMIUM_BIN=$(which chrome) poetry run pytest --junitxml report.xml
+        run: poetry run pytest --junitxml report.xml
       - name: Create test summary
         uses: test-summary/action@v2.0
         with:
           paths: report.xml
         if: always()
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          junit_files: "report.xml"

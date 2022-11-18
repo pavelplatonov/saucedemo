@@ -147,9 +147,19 @@ class CatalogPageLocators:
         "#add-to-cart-sauce-labs-backpack",
     )
     BIG_BTN_REMOVE_BACKPACK = (By.CSS_SELECTOR, "#remove-sauce-labs-backpack")
+    
 
     """Локаторы страницы корзины"""
+    
+    
+    class CartPageLocators:
+        BTN_CHECKOUT = (By.CSS_SELECTOR, "#checkout")
+    
 
     """Локаторы страницы карточки товара"""
 
     """Локаторы страницы оформления заказа"""
+
+    """Надо дописывать локаторы на большие катрочки товара и другие TC!!!"""
+
+    IN_BASKET = (By.XPATH, '//*[@class="inventory_item_name"]')

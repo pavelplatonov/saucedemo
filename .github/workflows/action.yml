@@ -37,7 +37,7 @@ jobs:
       - name: install Poetry
         run: pip install poetry
       - name: install dependencies
-        run: poetry update
+        run: poetry install
       - name: Run the pytest and generate junit xml report
         run: poetry run pytest --junitxml report.xml
       - name: Create test summary

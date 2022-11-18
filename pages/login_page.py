@@ -89,7 +89,9 @@ class LoginPage(BasePage):
         self.click_element(*CartPageLocators.BTN_CHECKOUT)
 
     def check_element_is_enable(self):
-        return self.browser.find_element(*CartPageLocators.BTN_CHECKOUT).is_enabled()
+        return self.browser.find_element(
+            *CartPageLocators.BTN_CHECKOUT
+        ).is_enabled()
 
     def find_checkout_button_color(self):
         rgb = self.browser.find_element(

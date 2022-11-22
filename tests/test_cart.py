@@ -8,7 +8,7 @@ link = "https://www.saucedemo.com/"
 def test_try_to_checkout_empty_cart_valid_user(browser):
     page = CartPage(browser, link)
     page.open_login_page()
-    page.login_valid_user()
+    page.login_standard_user()
     page.enter_valid_password()
     page.click_login_btn()
     time.sleep(1)

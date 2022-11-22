@@ -1,7 +1,6 @@
 from selenium.webdriver import Keys
 from .base_page import BasePage
 from .locators import LoginPageLocators
-from .locators import CartPageLocators
 from .locators import CatalogPageLocators
 from selenium.webdriver.support.color import Color
 

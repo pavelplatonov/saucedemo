@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators:
     BASE_ICON = (By.CSS_SELECTOR, ".login_logo")
+    BASE_LEFT_LIST = (By.CSS_SELECTOR, "#react-burger-menu-btn")
+    BASE_LOGOUT = (By.CSS_SELECTOR, "#logout_sidebar_link")
 
 
 """Локаторы страницы авторизации"""

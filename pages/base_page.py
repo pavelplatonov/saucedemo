@@ -13,6 +13,16 @@ class BasePage:
     def open_page(self):
         self.browser.get(self.link)
 
+    """Выбор элемента из локаторов"""
+
+    def find_element(self, method, locator):
+        self.browser.find_element(method, locator)
+
+    """Получаем значение атрибута элемента"""
+
+    def get_attribute(self, attribute):
+        self.browser.get_attribute(attribute)
+
     """Нажатие на выбранный элемент из локаторов"""
 
     def click_element(self, method, locator):

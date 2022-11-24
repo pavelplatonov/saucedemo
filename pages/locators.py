@@ -17,6 +17,7 @@ class MainPageLocators:
 
     # локатор иконки корзины
     CART_BTN = (By.XPATH, "//a[@class='shopping_cart_link']")
+    CART_BTN_BAGE = (By.CSS_SELECTOR, ".shopping_cart_badge")
 
     # локаторы подвала
     FOOTER_TEXT = (By.CSS_SELECTOR, ".footer_copy")
@@ -47,8 +48,8 @@ class CatalogPageLocators:
     CATALOGUE_LIST = (By.XPATH, "(//div[@class='inventory_item'])")
 
     # локаторы карточки рюкзака
-    ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")
-    ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
+    ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link > div")
+    ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link > img")
     ITEM_DESC_BACKPACK = (
         By.XPATH,
         "(//div[@class = 'inventory_item_desc'])[1]",
@@ -59,7 +60,7 @@ class CatalogPageLocators:
 
     # локаторы серой футболки
     ITEM_NAME_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_title_link")
-    ITEM_IMG_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_img_link")
+    ITEM_IMG_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_img_link > img")
     ITEM_DESC_BOLT_T_SHIRT = (
         By.XPATH,
         "(//div[@class = 'inventory_item_desc'])[3]",
@@ -133,6 +134,8 @@ class CatalogPageLocators:
     BTN_ADD_T_SHIRT = (By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)")
     BTN_REMOVE_T_SHIRT = (By.ID, "remove-test.allthethings()-t-shirt-(red)")
 
+
+class ItemPageLocators:
     """Большие карточки товара."""
 
     BTN_BACK_TO_PRODUCTS = (By.CSS_SELECTOR, "#back-to-products")

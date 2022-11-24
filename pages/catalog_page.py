@@ -1,5 +1,4 @@
 from .base_page import BasePage
-from .main_page import MainPage
 from .locators import CatalogPageLocators
 
 link = "https://www.saucedemo.com/inventory.html"
@@ -12,6 +11,11 @@ class CatalogPage(BasePage):
     def open_catalog_page(self):
         self.open_page()
         self.should_be_current_page(link)
+
+    """Сохраняем переменные с данными карточек"""
+
+    def open_catalog_page_save_item_info(self):
+        self.element_is_present(*CatalogPageLocators)
 
     """Открываем рюкзак из каталога по фото"""
 

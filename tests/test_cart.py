@@ -54,7 +54,7 @@ def test_checkout_first_page_with_one_item_in_cart_standard_user(browser):
 
     assert browser.current_url == "https://www.saucedemo.com/inventory.html"
 
-    first_item = page.find_item_name_text_in_cart()
+    first_item = page.find_first_item_name_in_inventory()
     page.click_first_item_add_to_cart()
     page.go_to_cart()
 
@@ -83,7 +83,7 @@ def test_checkout_first_page_with_one_item_in_cart_problem_user(browser):
 
     assert browser.current_url == "https://www.saucedemo.com/inventory.html"
 
-    first_item = page.find_item_name_text_in_cart()
+    first_item = page.find_first_item_name_in_inventory()
     page.click_first_item_add_to_cart()
     page.go_to_cart()
 

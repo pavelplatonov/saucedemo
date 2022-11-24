@@ -2,6 +2,7 @@ from .base_page import BasePage
 from .locators import CartPageLocators
 from .locators import CatalogPageLocators
 from .locators import LoginPageLocators
+from .login_page import LoginPage
 from selenium.webdriver.support.color import Color
 
 
@@ -13,36 +14,7 @@ performance_glitch_user = "performance_glitch_user"
 valid_password = "secret_sauce"
 
 
-class CartPage(BasePage):
-    def open_login_page(self):
-        self.open_page()
-        self.should_be_current_page(link)
-
-    def login_standard_user(self):
-        self.keyboard_input(*LoginPageLocators.LOGIN_USER, valid_user)
-
-    def login_problem_user(self):
-        self.keyboard_input(*LoginPageLocators.LOGIN_USER, problem_user)
-
-    def login_performance_glitch_user(self):
-        self.keyboard_input(
-            *LoginPageLocators.LOGIN_USER, performance_glitch_user
-        )
-
-    def enter_valid_password(self):
-        self.keyboard_input(*LoginPageLocators.LOGIN_PASSWORD, valid_password)
-
-    def click_login_btn(self):
-        self.click_element(*LoginPageLocators.LOGIN_BTN)
-
-    def add_bike_light(self):
-        self.click_element(*CatalogPageLocators.BTN_ADD_BIKE_LIGHT)
-
-    def go_to_cart(self):
-        self.click_element(*CatalogPageLocators.CART_BTN)
-
-    def go_to_bike_light_from_basket(self):
-        self.click_element(*CatalogPageLocators.IN_BASKET)
+class CartPage(LoginPage):
 
     def add_fleece_jacket_to_cart(self):
         self.click_element(*CatalogPageLocators.BTN_ADD_FLEECE_JACKET)

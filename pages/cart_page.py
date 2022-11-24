@@ -1,7 +1,5 @@
-from .base_page import BasePage
 from .locators import CartPageLocators
 from .locators import CatalogPageLocators
-from .locators import LoginPageLocators
 from .login_page import LoginPage
 from selenium.webdriver.support.color import Color
 

@@ -1,6 +1,6 @@
 from selenium.webdriver import Keys
 from .base_page import BasePage
-from .locators import LoginPageLocators
+from .locators import LoginPageLocators, CatalogPageLocators
 from selenium.webdriver.support.color import Color
 
 
@@ -70,3 +70,7 @@ class LoginPage(BasePage):
         ).value_of_css_property("border-bottom-color")
         color = Color.from_string(rgb1).hex
         return color
+
+    def ADD_TO_CART_SAUCE_LABS_BACKPACK_BTB(self):
+        self.click_element(*CatalogPageLocators.ADD_TO_CART_SAUCE_LABS_BACKPACK)
+

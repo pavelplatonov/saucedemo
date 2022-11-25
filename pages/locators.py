@@ -39,6 +39,8 @@ class CatalogPageLocators:
     CATALOGUE_LIST = (By.XPATH, "(//div[@class='inventory_item'])")
 
     # локаторы карточки рюкзака
+    SAUCE_LABS_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")
+    ADD_TO_CART_SAUCE_LABS_BACKPACK = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack")
     ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")
     ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
     ITEM_DESC_BACKPACK = (

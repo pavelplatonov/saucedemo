@@ -1,8 +1,26 @@
 from selenium.webdriver.common.by import By
 
 
-class BasePageLocators:
+"""Локаторы общие для всех страниц"""
+
+
+class MainPageLocators:
     BASE_ICON = (By.CSS_SELECTOR, ".login_logo")
+
+    # локаторы выпадающего меню и кнопка бутерброд
+    MENU_BTN = (By.CSS_SELECTOR, "#react-burger-menu-btn")
+    SIDEBAR_BTN_ALL = (By.CSS_SELECTOR, "#inventory_sidebar_link")
+    SIDEBAR_BTN_ABOUT = (By.CSS_SELECTOR, "#about_sidebar_link")
+    SIDEBAR_BTN_LOGOUT = (By.CSS_SELECTOR, "#logout_sidebar_link")
+    SIDEBAR_BTN_RESET = (By.CSS_SELECTOR, "#reset_sidebar_link")
+    SIDEBAR_BTN_CROSS = (By.CSS_SELECTOR, "#react-burger-cross-btn")
+
+    # локатор иконки корзины
+    CART_BTN = (By.XPATH, "//a[@class='shopping_cart_link']")
+    CART_BTN_BAGE = (By.CSS_SELECTOR, ".shopping_cart_badge")
+
+    # локаторы подвала
+    FOOTER_TEXT = (By.CSS_SELECTOR, ".footer_copy")
 
 
 """Локаторы страницы авторизации"""
@@ -25,24 +43,13 @@ class LoginPageLocators:
 
 
 class CatalogPageLocators:
-    # локаторы выпадающего меню и кнопка бутерброд
-    MENU_BTN = (By.CSS_SELECTOR, "#react-burger-menu-btn")
-    SIDEBAR_BTN_ALL = (By.CSS_SELECTOR, "#inventory_sidebar_link")
-    SIDEBAR_BTN_ABOUT = (By.CSS_SELECTOR, "#about_sidebar_link")
-    SIDEBAR_BTN_LOGOUT = (By.CSS_SELECTOR, "#logout_sidebar_link")
-    SIDEBAR_BTN_RESET = (By.CSS_SELECTOR, "#reset_sidebar_link")
-    SIDEBAR_BTN_CROSS = (By.CSS_SELECTOR, "#react-burger-cross-btn")
-
-    # локаторы иконки корзины и кнопки сортировка каталога
-    CART_BTN = (By.XPATH, "//a[@class='shopping_cart_link']")
+    # локаторы кнопки сортировка каталога и карточек товара
     SORT_WINDOW = (By.XPATH, "//select[@class='product_sort_container']")
     CATALOGUE_LIST = (By.XPATH, "(//div[@class='inventory_item'])")
 
     # локаторы карточки рюкзака
-    SAUCE_LABS_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")
-    ADD_TO_CART_SAUCE_LABS_BACKPACK = (By.CSS_SELECTOR, "#add-to-cart-sauce-labs-backpack")
-    ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")
-    ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
+    ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link > div")
+    ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link > img")
     ITEM_DESC_BACKPACK = (
         By.XPATH,
         "(//div[@class = 'inventory_item_desc'])[1]",
@@ -53,7 +60,7 @@ class CatalogPageLocators:
 
     # локаторы серой футболки
     ITEM_NAME_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_title_link")
-    ITEM_IMG_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_img_link")
+    ITEM_IMG_BOLT_T_SHIRT = (By.CSS_SELECTOR, "#item_1_img_link > img")
     ITEM_DESC_BOLT_T_SHIRT = (
         By.XPATH,
         "(//div[@class = 'inventory_item_desc'])[3]",
@@ -127,23 +134,16 @@ class CatalogPageLocators:
     BTN_ADD_T_SHIRT = (By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)")
     BTN_REMOVE_T_SHIRT = (By.ID, "remove-test.allthethings()-t-shirt-(red)")
 
-    # локаторы подвала
-    FOOTER_TEXT = (By.CSS_SELECTOR, ".footer_copy")
 
+class ItemPageLocators:
     """Большие карточки товара."""
 
     BTN_BACK_TO_PRODUCTS = (By.CSS_SELECTOR, "#back-to-products")
 
-    BIG_ITEM_NAME_BACKPACK = (
-        By.XPATH,
-        "//div[@class='inventory_details_name large_size']",
-    )
-    BIG_ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, "#item_4_img_link")
-    BIG_ITEM_DESC_BACKPACK = (
-        By.XPATH,
-        "//div[contains(text(),'carry.allTheThings() with the sleek, streamlined S')]']",
-    )
-    BIG_PRICE_BACKPACK = (By.XPATH, "//div[normalize-space()='$29.99']")
+    BIG_ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, ".inventory_details_name")
+    BIG_ITEM_IMG_BACKPACK = (By.CSS_SELECTOR, ".inventory_details_img")
+    BIG_ITEM_DESC_BACKPACK = (By.CSS_SELECTOR, ".inventory_details_desc")
+    BIG_PRICE_BACKPACK = (By.CSS_SELECTOR, ".inventory_details_price")
     BIG_BTN_ADD_BACKPACK = (
         By.CSS_SELECTOR,
         "#add-to-cart-sauce-labs-backpack",

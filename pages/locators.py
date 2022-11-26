@@ -158,10 +158,20 @@ class ItemPageLocators:
 
 class CartPageLocators:
     BTN_CHECKOUT = (By.CSS_SELECTOR, "#checkout")
-
+    BTN_CONTINUE = (By.XPATH, "//input[@id='continue']")
 
 """Локаторы страницы карточки товара"""
 
 """Локаторы страницы оформления заказа"""
+
+class CheckoutPageLocators:
+    FIELD_FIRST_NAME = (By.CSS_SELECTOR, "#first-name")
+    FIELD_LAST_NAME = (By.CSS_SELECTOR, "#last-name")
+    FIELD_ZIP_CODE = (By.CSS_SELECTOR, "#postal-code")
+    EMPTY = "empty_first_name"
+
+class FinishPageLocators:
+    BTN_FINISH = (By.CSS_SELECTOR, "#finish")
+    BTN_BACK_HOME = (By.CSS_SELECTOR, "#back-to-products")
 
 """Надо дописывать локаторы на большие карточки товара и другие TC!!!"""

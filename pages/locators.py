@@ -162,7 +162,9 @@ class CartPageLocators:
 
 """Локаторы страницы карточки товара"""
 
+
 """Локаторы страницы оформления заказа"""
+
 
 class CheckoutPageLocators:
     FIELD_FIRST_NAME = (By.CSS_SELECTOR, "#first-name")

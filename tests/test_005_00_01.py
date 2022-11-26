@@ -5,6 +5,7 @@ from pages.checkout_page import CheckoutPage
 
 link = "https://www.saucedemo.com/"
 
+
 def test_login(browser):
     page = LoginPage(browser, link)
     page.open_page()

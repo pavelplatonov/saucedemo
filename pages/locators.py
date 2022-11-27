@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators:
     BASE_ICON = (By.CSS_SELECTOR, ".login_logo")
+    BASE_LEFT_LIST = (By.CSS_SELECTOR, "#react-burger-menu-btn")
+    BASE_LOGOUT = (By.CSS_SELECTOR, "#logout_sidebar_link")
 
 
 """Локаторы страницы авторизации"""
@@ -149,6 +151,8 @@ class CatalogPageLocators:
     BIG_BTN_REMOVE_BACKPACK = (By.CSS_SELECTOR, "#remove-sauce-labs-backpack")
 
     IN_BASKET = (By.XPATH, '//*[@class="inventory_item_name"]')
+    FIRST_ITEM_NAME_IN_INVENTORY = (By.CSS_SELECTOR, ".inventory_item_name")
+    FIRST_ITEM_BTN_ADD_TO_CART = (By.CSS_SELECTOR, ".btn_primary")
 
 
 """Локаторы страницы корзины"""
@@ -156,6 +160,7 @@ class CatalogPageLocators:
 
 class CartPageLocators:
     BTN_CHECKOUT = (By.CSS_SELECTOR, "#checkout")
+    ELEMENT_IN_CART = (By.CSS_SELECTOR, ".inventory_item_name")
 
 
 """Локаторы страницы карточки товара"""

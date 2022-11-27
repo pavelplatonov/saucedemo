@@ -31,3 +31,20 @@ class CartPage(LoginPage):
         ).value_of_css_property("background-color")
         color = Color.from_string(rgb).hex
         return color
+
+    def find_item_name_text_in_cart(self):
+        items_text = self.browser.find_element(
+            *CartPageLocators.ELEMENT_IN_CART
+        ).text
+        return items_text
+
+    def find_first_item_name_in_inventory(self):
+        first_item = str(
+            self.browser.find_element(
+                *CatalogPageLocators.FIRST_ITEM_NAME_IN_INVENTORY
+            ).text
+        )
+        return first_item
+
+    def click_first_item_add_to_cart(self):
+        self.click_element(*CatalogPageLocators.FIRST_ITEM_BTN_ADD_TO_CART)

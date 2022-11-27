@@ -95,7 +95,7 @@ def test_check_sorting_high_low_standard_user(browser):
 
     assert new_items_cost == sorted(
         new_items_cost, reverse=True
-    ), "Incorrect Z-A sorting"
+    ), "Incorrect High-Low sorting"
 
 
 def test_check_sorting_high_low_problem_user(browser):
@@ -115,7 +115,7 @@ def test_check_sorting_high_low_problem_user(browser):
 
     assert new_items_cost == sorted(
         new_items_cost, reverse=True
-    ), "Incorrect Z-A sorting"
+    ), "Incorrect High-Low sorting"
 
 
 def test_check_sorting_low_high_standard_user(browser):
@@ -133,7 +133,7 @@ def test_check_sorting_low_high_standard_user(browser):
     items_cost = page.find_all_items_cost_in_inventory()
     new_items_cost = [float(x.text.replace("$", "")) for x in items_cost]
 
-    assert new_items_cost == sorted(new_items_cost), "Incorrect Z-A sorting"
+    assert new_items_cost == sorted(new_items_cost), "Incorrect Low-High sorting"
 
 
 def test_check_sorting_low_high_problem_user(browser):
@@ -151,4 +151,4 @@ def test_check_sorting_low_high_problem_user(browser):
     items_cost = page.find_all_items_cost_in_inventory()
     new_items_cost = [float(x.text.replace("$", "")) for x in items_cost]
 
-    assert new_items_cost == sorted(new_items_cost), "Incorrect Z-A sorting"
+    assert new_items_cost == sorted(new_items_cost), "Incorrect Low-High sorting"

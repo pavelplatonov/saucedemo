@@ -39,6 +39,11 @@ class CatalogPageLocators:
     CART_BTN = (By.XPATH, "//a[@class='shopping_cart_link']")
     SORT_WINDOW = (By.XPATH, "//select[@class='product_sort_container']")
     CATALOGUE_LIST = (By.XPATH, "(//div[@class='inventory_item'])")
+    SORT_NAME_ZA = (By.CSS_SELECTOR, "[value = 'za']")
+    SORT_NAME_AZ = (By.CSS_SELECTOR, "[value = 'az']")
+    SORT_PRICE_LOW_HIGH = (By.CSS_SELECTOR, "[value = 'lohi']")
+    SORT_PRICE_HIGH_LOW = (By.CSS_SELECTOR, "[value = 'hilo']")
+    COST_LOCATOR_FOR_ALL_ITEMS = (By.CSS_SELECTOR, ".inventory_item_price")
 
     # локаторы карточки рюкзака
     ITEM_NAME_BACKPACK = (By.CSS_SELECTOR, "#item_4_title_link")

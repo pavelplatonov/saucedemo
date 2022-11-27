@@ -174,6 +174,12 @@ class CheckoutPageLocators:
 
 class FinishPageLocators:
     BTN_FINISH = (By.CSS_SELECTOR, "#finish")
+    BTN_CANCEL = (By.XPATH, "//button[@id='cancel']")
     BTN_BACK_HOME = (By.CSS_SELECTOR, "#back-to-products")
+
+class CompletePageLocators:
+    IMG_PONY_EXPRESS = (By.XPATH, "//img[@alt='Pony Express']")
+
+
 
 """Надо дописывать локаторы на большие карточки товара и другие TC!!!"""
